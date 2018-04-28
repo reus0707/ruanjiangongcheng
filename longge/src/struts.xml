@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+   "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+   "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+<constant name="struts.devMode" value="true" />
+<constant name="struts.i18n.encoding" value="utf-8"/>
+
+   <package name="Action"   extends="struts-default">
+		<action name = "showall" class = "Action.Main" method="showall">
+			<result>/booklist.jsp</result>
+		</action>
+		<action name = "home" class = "Action.Main">
+			<result>/index.jsp</result>
+		</action>
+		<action name = "query" class = "Action.Main" method ="query">
+			<result name = "success">/author.jsp</result>
+			<result name = "error">/notfound.jsp</result>
+		</action>
+		<action name = "toauthor" class = "Action.Main" method ="toauthor">
+			<result name = "success">/author.jsp</result>
+			<result name = "error">/notfound.jsp</result>
+		</action>
+		<action name = "addbook" class = "Action.Main" method ="addbook">
+			<result name= "success">/index.jsp</result>
+			<result name= "fail">/fail.jsp</result>
+			<result name= "error">/addauthor.jsp</result>
+			<result name= "exception">/exception.jsp</result>
+		</action>
+		<action name = "toaddbook" class = "Action.Main" method ="toaddbook">
+		<result>/addbook.jsp</result>
+		</action>
+		<action name = "addauthor" class = "Action.Main" method ="addauthor">
+		<result name = "success">/index.jsp</result>
+		<result name = "exception">/exception.jsp</result>
+		</action>
+		<action name = "delete" class = "Action.Main" method="delete">
+			<result>/success.jsp</result>
+		</action>
+   </package>
+</struts>
